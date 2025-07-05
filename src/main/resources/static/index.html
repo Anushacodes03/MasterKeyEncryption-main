@@ -1,0 +1,97 @@
+DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Key Encryption System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>🔐 User Data Encryption System</h1>
+    <p>Secure storage with master key encryption</p>
+  </header>
+
+  <main>
+    <!-- Create User Section -->
+    <section class="card">
+      <h2>➕ Create New User</h2>
+      <form id="createUserForm" class="form">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" required>
+        </div>
+        <div class="form-group">
+          <label for="sensitiveData">Password</label>
+          <textarea id="sensitiveData" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Encrypt & Store</button>
+      </form>
+      <div id="createResult" class="result"></div>
+    </section>
+
+    <!-- User Operations Section -->
+    <div class="grid">
+      <!-- Get User -->
+      <section class="card">
+        <h2>🔍 Get User Data</h2>
+        <form id="getUserForm" class="form">
+          <div class="form-group">
+            <label for="userId">User ID</label>
+            <input type="text" id="userId" required>
+          </div>
+          <button type="submit" class="btn btn-secondary">Decrypt & View</button>
+        </form>
+        <div id="getUserResult" class="result"></div>
+      </section>
+
+      <!-- Update User -->
+      <section class="card">
+        <h2>✏️ Update User</h2>
+        <form id="updateUserForm" class="form">
+          <div class="form-group">
+            <label for="updateUserId">User ID</label>
+            <input type="text" id="updateUserId" required>
+          </div>
+          <div class="form-group">
+            <label for="newData">New Password</label>
+            <textarea id="newData" rows="3" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-warning">Re-encrypt & Update</button>
+        </form>
+        <div id="updateResult" class="result"></div>
+      </section>
+    </div>
+
+    <!-- Delete User -->
+    <section class="card danger-zone">
+      <h2>❌ Delete User</h2>
+      <form id="deleteUserForm" class="form">
+        <div class="form-group">
+          <label for="deleteUserId">User ID</label>
+          <input type="text" id="deleteUserId" required>
+        </div>
+        <button type="submit" class="btn btn-danger">Delete Permanently</button>
+      </form>
+      <div id="deleteResult" class="result"></div>
+    </section>
+
+    <!-- User List Section -->
+    <section class="card">
+      <div class="section-header">
+        <h2>👥 All Users</h2>
+        <button id="getAllUsersBtn" class="btn btn-secondary">Refresh List</button>
+      </div>
+      <div id="getAllUsersResult" class="user-list-container"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Master Key Encryption System | Spring Boot + MongoDB</p>
+  </footer>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
